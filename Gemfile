@@ -1,0 +1,8 @@
+source 'https://rubygems.org'
+gem 'asciidoctor'
+gem 'asciidoctor-pdf'
+gem 'asciidoctor-pdf-cjk'
+gem 'asciidoctor-diagram'
+gem 'coderay'
+gem 'rake'
+gem 'launchy'

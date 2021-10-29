@@ -1,0 +1,6 @@
+{
+    "asciidoc.use_asciidoctor_js": true,
+    //"asciidoc.asciidoctor_command": "bundle exec asciidoctor -r asciidoctor-diagram -o-",
+    "asciidoc.use_asciidoctorpdf": true,
+    "asciidoc.asciidoctorpdf_command": "bundle exec asciidoctor-pdf -r asciidoctor-diagram -r asciidoctor-pdf-cjk -a skip-front-matter -a allow-uri-read -a pdf-stylesdir=styles -a pdf-style=default-with-fallback-font-theme.yml",
+}

@@ -1,0 +1,1202 @@
+//Document Attributes
+:source-highlighter: highlightjs
+:doctype: book
+:imagesdir: images
+:example-caption: 例
+:table-caption: 表
+:figure-caption: 図
+:icons: font
+:experimental:
+:pagenums:
+:sectanchors:
+:sectlinks:
+:sectnums:
+:toc: left
+:toclevels: 3
+:toc-title: 目次
+//Document Attributes (Custum)
+:disclaimer: 免責事項…
+:url-repo: https://github.com/tommylife88/asciidoc
+:chapter-label:
+
+= AsciiDoc Cheat sheet
+//Document Header
+:description: AsciiDoc Cheat sheet
+:lang: ja
+
+[.lead]
+====
+link:https://asciidoctor.org/[AsciiDoc] Cheat sheet
+====
+
+== Document Attributes
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/attributes/document-attributes-ref/[Document Attributes Reference]
+
+[source,asciidoc]
+----
+//Document Attributes
+:source-highlighter: coderay
+:doctype: book
+:imagesdir: images
+:example-caption: 例
+:table-caption: 表
+:figure-caption: 図
+:icons: font
+:experimental:
+:pagenums:
+:sectanchors:
+:sectlinks:
+:sectnums:
+:toc: left
+:toclevels: 3
+:toc-title: 目次
+//Document Attributes (Custum)
+:disclaimer: 免責事項…
+:url-repo: https://github.com/tommylife88/asciidoc
+:chapter-label:
+----
+
+.asciidoc
+[source,asciidoc]
+----
+このドキュメントは {url-repo}[MITライセンスで公開します].
+
+WARNING: {disclaimer}
+----
+
+****
+このドキュメントは {url-repo}[MITライセンスで公開します].
+
+WARNING: {disclaimer}
+****
+
+== Element Attributes
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/attributes/element-attributes/[Element Attributes]
+
+[[attributes-id-anchor]]
+=== ID Attributes
+
+内部リンクや相互参照アンカー。CSSのIDセレクタのような特定の要素にスタイルを追加するために使用する。
+
+.asciidoc
+[source,asciidoc]
+----
+[[attributes-id-anchor]]
+=== ID属性
+
+内部相互参照は、<<attributes-id-anchor,このように>>記述します。
+----
+
+****
+内部相互参照は、<<attributes-id-anchor,このように>>記述します。
+****
+
+=== Role Attributes
+
+CSSのClassセレクタのようなグループ要素にスタイルを追加するために使用する。
+
+TBC
+
+=== Options Attributes
+
+TBC
+
+== Document Header
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/document/header-ref/[Header Reference]
+
+.asciidoc
+[source,asciidoc]
+----
+= AsciiDoc Cheat sheet
+//Document Header
+:description: AsciiDoc Cheat sheet
+:author: <Your name>
+:revdate: <Date>
+:revnumber: 1.0
+:lang: ja
+----
+
+=== Document Types
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/document/doctypes/[Document Types]
+
+.Document Types
+[horizontal]
+Article (article)::
+デフォルトの``Doctype``。付録、要約、参考文献、用語集、および索引の基本的なセクションが含まれている。本やマニュアルページを作成しているのでない限り、``Article``で十分。
+Book (book)::
+``Article``に加えて本向けの特別なセクションが含まれる。
+Man page (manpage)::
+UnixおよびUnixライクなマニュアルページ（manページ）を作成するために使用する。
+Inline (inline)::
+AsciiDoc フォーマットをインラインで作成する場合に使用する。
+
+== Section
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/sections/titles-and-levels/[Section Titles and Levels]
+
+``DocType``によって意味が異なるが、``Book``の場合。
+
+.asciidoc
+[source,asciidoc]
+----
+= ドキュメントのタイトル(レベル０)
+
+[[section-hoge-id]]//IDの付与
+== セクション レベル１
+
+=== セクション レベル２
+
+==== セクション レベル３
+
+===== セクション レベル４
+
+====== セクション レベル５
+
+== セクション レベル１
+----
+
+セクションアンカーとリンクは以下のドキュメント属性を定義する。
+
+.asciidoc
+[source,asciidoc]
+----
+:sectanchors: //セクションアンカーアイコンを表示
+:sectlinks: //セクションタイトルに自分自身へのリンクを付与
+----
+
+=== Styles
+
+例えば、``Book``ドキュメントタイプでは、次のセクションスタイルが用意されている。
+
+* colophon （奥付）
+* dedication （献身）
+* acknowledgments （謝辞）
+* preface （序文）
+* part （部）
+* chapter （章）
+* appendix（付録）
+* glossary（用語集）
+* bibliography（参考文献）
+* index（索引）
+
+[colophon]
+==== Colophon
+
+The Asciidoctor Press, Ceres and Denver.
+
+(C) 2020 by The Asciidoctor Press
+
+Published in the Milky Way Galaxy.
+
+This book is designed by Dagger Flush, Denver, Colorado.
+The types are handset Volcano Dust and Papaya, designed by Leeloo.
+Leeloo created the typefaces to soften the bluntness of documentation.
+
+Built with Asciidoctor on Fedora 33.
+
+Printing and binding by Ceres Lithographing, Inc., Ceres, Milky Way.
+
+[dedication]
+==== Dedication
+
+For S.S.T.--
+
+thank you for the plague of archetypes.
+
+[dedication%untitled]
+==== Abstract
+
+[abstract]
+--
+This article will take you on a wonderful adventure of knowledge.
+
+You'll start with the basics.
+Beyond that, where you go is up to you.
+--
+
+[preface]
+==== Preface
+
+I awoke one morning and was confronted by the dark and stormy eyes of the chinchilla.
+She had conquered the mountain of government reports that had eroded into several minor foothills and a creeping alluvial plain of loose papers.
+
+[appendix]
+==== Appendix
+
+hoge
+
+[glossary]
+==== Glossary
+
+[glossary]
+mud:: wet, cold dirt
+rain::
+water falling from the sky
+
+[dedication%untitled]
+==== Bibliography
+
+_The Pragmatic Programmer_ <<pp>> should be required reading for all developers.
+To learn all about design patterns, refer to the book by the "`Gang of Four`" <<gof>>.
+
+[bibliography]
+===== References
+
+* [[[pp]]] Andy Hunt & Dave Thomas. The Pragmatic Programmer:
+From Journeyman to Master. Addison-Wesley. 1999.
+* [[[gof,gang]]] Erich Gamma, Richard Helm, Ralph Johnson & John Vlissides.
+Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley. 1994.
+
+[dedication%untitled]
+==== Index
+
+I, King Arthur.
+(((knight, "Arthur, King")))
+
+[index]
+===== Index
+
+自動的にリスト化される。
+
+WARN:: AsciidoctorのHTML5コンバーターでは作成されない。
+
+== Paragraphs
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/blocks/paragraphs/[Paragraphs]
+
+[source,asciidoc]
+----
+Paragraphs don't require any special markup in AsciiDoc.
+A paragraph is just one or more lines of consecutive text.
+
+To begin a new paragraph, separate it by at least one blank line from the previous paragraph or block.
+----
+
+****
+Paragraphs don't require any special markup in AsciiDoc.
+A paragraph is just one or more lines of consecutive text.
+
+To begin a new paragraph, separate it by at least one blank line from the previous paragraph or block.
+****
+
+=== Inline line break
+
+[source,asciidoc]
+----
+Rubies are red, +
+Topazes are blue.
+----
+
+****
+Rubies are red, +
+Topazes are blue.
+****
+
+=== Paragraph Alignment
+
+[source,asciidoc]
+----
+[.text-center]
+This text is centered, so it must be important.
+----
+
+****
+[.text-center]
+This text is centered, so it must be important.
+****
+
+== Discrete Headings
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/blocks/discrete-headings/[Discrete Headings]
+
+[source,asciidoc]
+----
+****
+Discrete headings are useful for making headings inside of other blocks, like this sidebar.
+
+[discrete]
+== Discrete Heading
+
+Discrete headings can be used where sections are not permitted.
+****
+----
+
+****
+Discrete headings are useful for making headings inside of other blocks, like this sidebar.
+
+[discrete]
+== Discrete Heading
+
+Discrete headings can be used where sections are not permitted.
+****
+
+== Breaks
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/blocks/breaks/[Breaks]
+
+=== Thematic breaks
+
+[source,asciidoc]
+----
+'''
+----
+
+****
+'''
+****
+
+=== Page breaks
+
+
+[source,asciidoc]
+----
+<<<
+----
+
+== Text Formatting
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/text/[Text Formatting and Punctuation]
+
+=== Bold,Italic,Monospace
+
+[source,asciidoc]
+----
+A bold *word*, and a bold *phrase of text*.
+
+Bold c**hara**cter**s** within a word.
+
+`*_monospace bold italic phrase_*` & ``**__char__**``acter``**__s__**``
+
+An italic _word_, and an italic _phrase of text_.
+
+Italic c__hara__cter__s__ within a word.
+
+"`Wait!`" Indigo plucked a small vial from her desk's top drawer
+and held it toward us.
+The vial's label read: `E=mc^2^`; the `E` represents _energy_,
+but also pure _genius!_
+----
+
+****
+A bold *word*, and a bold *phrase of text*.
+
+Bold c**hara**cter**s** within a word.
+
+`*_monospace bold italic phrase_*` & ``**__char__**``acter``**__s__**``
+
+An italic _word_, and an italic _phrase of text_.
+
+Italic c__hara__cter__s__ within a word.
+
+"`Wait!`" Indigo plucked a small vial from her desk's top drawer
+and held it toward us.
+The vial's label read: `E=mc^2^`; the `E` represents _energy_,
+but also pure _genius!_
+****
+
+=== Marks, etc...
+
+[source,asciidoc]
+----
+The text #marker me# is markered.
+
+The text [.underline]#underline me# is underlined.
+
+The text [.overline]#overline me# is overlined.
+
+The text [.small]#small me# is smalled.
+
+The text [.big]#big me# is big.
+
+The text [.line-through]#line-through me# is line-through.
+----
+
+****
+The text #marker me# is markered.
+
+The text [.underline]#underline me# is underlined.
+
+The text [.overline]#overline me# is overlined.
+
+The text [.small]#small me# is smalled.
+
+The text [.big]#big me# is big.
+
+The text [.line-through]#line-through me# is line-through.
+****
+
+=== Subscript and Superscript
+
+[source,asciidoc]
+----
+"`Well the H~2~O formula written on their whiteboard could be part
+of a shopping list, but I don't think the local bodega sells
+E=mc^2^,`" Lazarus replied.
+----
+
+****
+"`Well the H~2~O formula written on their whiteboard could be part
+of a shopping list, but I don't think the local bodega sells
+E=mc^2^,`" Lazarus replied.
+****
+
+=== Quotation Marks and Apostrophes
+
+[source,asciidoc]
+----
+"`What kind of charm?`" Lazarus asked.
+"`An odoriferous one or a mineral one?`"
+
+Kizmet shrugged.
+"`The note from Olaf's desk says '`wormwood and licorice,`'
+but these could be normal groceries for werewolves.`"
+----
+
+****
+"`What kind of charm?`" Lazarus asked.
+"`An odoriferous one or a mineral one?`"
+
+Kizmet shrugged.
+"`The note from Olaf's desk says '`wormwood and licorice,`'
+but these could be normal groceries for werewolves.`"
+****
+
+== Lists
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/lists/unordered/[Lists]
+
+[source,asciidoc]
+----
+.Unordered Lists
+* Edgar Allan Poe
+* Sheri S. Tepper
+* Bill Bryson
+
+.Ordered Lists
+. Protons
+. Electrons
+. Neutrons
+
+.Checklists
+* [*] checked
+* [x] also checked
+* [ ] not checked
+* normal list item
+
+.Basic description list
+CPU:: The brain of the computer.
+Hard drive:: Permanent storage for operating system and/or user files.
+RAM:: Temporarily stores information the CPU uses during operation.
+Keyboard:: Used to enter text or control items on the screen.
+Mouse:: Used to point to and select items on your computer screen.
+Monitor:: Displays information in visual form using text and graphics.
+
+.Basic description list
+[horizontal]
+CPU:: The brain of the computer.
+Hard drive:: Permanent storage for operating system and/or user files.
+RAM:: Temporarily stores information the CPU uses during operation.
+Keyboard:: Used to enter text or control items on the screen.
+Mouse:: Used to point to and select items on your computer screen.
+Monitor:: Displays information in visual form using text and graphics.
+
+.Question and Answer Lists
+[qanda]
+What is the answer?::
+This is the answer.
+
+Have you seen my duck?:: No.
+
+.list continuation
+* parent list item
+.. second child list item
+*** third list item
+.. second child list item
+*** third list item
+
++
+paragraph attached to parent list item
+
+----
+
+****
+.Unordered Lists
+* Edgar Allan Poe
+* Sheri S. Tepper
+* Bill Bryson
+
+.Ordered Lists
+. Protons
+. Electrons
+. Neutrons
+
+.Checklists
+* [*] checked
+* [x] also checked
+* [ ] not checked
+* normal list item
+
+.Basic description list
+CPU:: The brain of the computer.
+Hard drive:: Permanent storage for operating system and/or user files.
+RAM:: Temporarily stores information the CPU uses during operation.
+Keyboard:: Used to enter text or control items on the screen.
+Mouse:: Used to point to and select items on your computer screen.
+Monitor:: Displays information in visual form using text and graphics.
+
+.Basic description list
+[horizontal]
+CPU:: The brain of the computer.
+Hard drive:: Permanent storage for operating system and/or user files.
+RAM:: Temporarily stores information the CPU uses during operation.
+Keyboard:: Used to enter text or control items on the screen.
+Mouse:: Used to point to and select items on your computer screen.
+Monitor:: Displays information in visual form using text and graphics.
+
+.Question and Answer Lists
+[qanda]
+What is the answer?::
+This is the answer.
+
+Have you seen my duck?:: No.
+
+.list continuation
+* parent list item
+.. second child list item
+*** third list item
+.. second child list item
+*** third list item
+
++
+paragraph attached to parent list item
+****
+
+== Links
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/macros/links/[Links]
+
+[source,asciidoc]
+----
+https://docs.asciidoctor.org/ - atuo link
+
+https://docs.asciidoctor.org/[Asciidoctor]
+
+https://github.com/asciidoctor[Asciidoctor @ *GitHub*]
+
+//Windows形式でもOK
+link:\\server\share\whitepaper.pdf[Whitepaper]
+
+//相対パスもOK
+link:downloads/report.pdf[Get Report]
+
+//ルール指定
+https://discuss.asciidoctor.org[Discuss Asciidoctor,role=resource,window=_blank]
+----
+
+****
+https://docs.asciidoctor.org/ - atuo link
+
+https://docs.asciidoctor.org/[Asciidoctor]
+
+https://github.com/asciidoctor[Asciidoctor @ *GitHub*]
+
+//Windows版リンク
+link:\\server\share\whitepaper.pdf[Whitepaper]
+
+//相対パス
+link:downloads/report.pdf[Get Report]
+
+https://discuss.asciidoctor.org[Discuss Asciidoctor,role=resource,window=_blank]
+****
+
+== Footnotes
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/macros/footnote/[Footnotes]
+
+[source,asciidoc]
+----
+The hail-and-rainbow protocol can be initiated at five levels:
+
+. doublefootnote:[The double hail-and-rainbow level makes my toes tingle.]
+. tertiary
+. supernumerary
+. supermassive
+. apocalyptic
+
+A bold statement!footnote:disclaimer[Opinions are my own.]
+
+Another outrageous statement.footnote:disclaimer[]
+----
+
+****
+The hail-and-rainbow protocol can be initiated at five levels:
+
+. doublefootnote:[The double hail-and-rainbow level makes my toes tingle.]
+. tertiary
+. supernumerary
+. supermassive
+. apocalyptic
+
+A bold statement!footnote:disclaimer[Opinions are my own.]
+
+Another outrageous statement.footnote:disclaimer[]
+****
+
+== Images
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/macros/images/[Images]
+
+[source,asciidoc]
+----
+image::sunset.jpg[Sunset]
+
+[#img-sunset]
+.A mountain sunset
+[link=https://www.flickr.com/photos/javh/5448336655]
+image::sunset.jpg[Sunset,200,100]
+
+You can find image:https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg[Linux,25,35] everywhere these days.
+
+image::sample.svg[Static,300]
+----
+
+****
+image::sunset.jpg[Sunset]
+
+[#img-sunset]
+.A mountain sunset
+[link=https://www.flickr.com/photos/javh/5448336655]
+image::sunset.jpg[Sunset,200,100]
+
+You can find image:Tiger.svg[Tiger,25,35] everywhere these days.
+
+image::sample.svg[Static,300]
+****
+
+== Media
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/macros/audio-and-video/[Audio and Video]
+
+[source,asciidoc]
+----
+video::RvRhUHTV_8k/PLDitloyBcHOm49bxNhvGgg0f9NRZ5lSaP[youtube,width=640,height=480]
+----
+
+****
+video::RvRhUHTV_8k/PLDitloyBcHOm49bxNhvGgg0f9NRZ5lSaP[youtube]
+****
+
+== Icon
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/macros/icons-font/[Icons]
+
+=== Icon Fonts
+
+[source,asciidoc]
+----
+NOTE: NOTE
+
+TIP: TIP
+
+IMPORTANT: IMPORTANT
+
+WARNING: WARNING
+
+CAUTION: CAUTION
+----
+
+****
+NOTE: NOTE
+
+TIP: TIP
+
+IMPORTANT: IMPORTANT
+
+WARNING: WARNING
+
+CAUTION: CAUTION
+****
+
+== Keyboard Macro
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/macros/keyboard-macro/[Keyboard Macro]
+
+[source,asciidoc]
+----
+|===
+|Shortcut |Purpose
+
+|kbd:[F11]
+|Toggle fullscreen
+
+|kbd:[Ctrl+T]
+|Open a new tab
+
+|kbd:[Ctrl+Shift+N]
+|New incognito window
+
+|kbd:[\ ]
+|Used to escape characters
+
+|kbd:[Ctrl+\]]
+|Jump to keyword
+
+|kbd:[Ctrl + +]
+|Increase zoom
+|===
+----
+
+****
+|===
+|Shortcut |Purpose
+
+|kbd:[F11]
+|Toggle fullscreen
+
+|kbd:[Ctrl+T]
+|Open a new tab
+
+|kbd:[Ctrl+Shift+N]
+|New incognito window
+
+|kbd:[\ ]
+|Used to escape characters
+
+|kbd:[Ctrl+\]]
+|Jump to keyword
+
+|kbd:[Ctrl + +]
+|Increase zoom
+|===
+****
+
+== UI Macro
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/macros/ui-macros/[Button and Menu UI Macros]
+
+[source,asciidoc]
+----
+Press the btn:[OK] button when you are finished.
+
+Select a file in the file navigator and click btn:[Open].
+
+To save the file, select menu:File[Save].
+
+Select menu:View[Zoom > Reset] to reset the zoom level to the default setting.
+----
+
+****
+Press the btn:[OK] button when you are finished.
+
+Select a file in the file navigator and click btn:[Open].
+
+To save the file, select menu:File[Save].
+
+Select menu:View[Zoom > Reset] to reset the zoom level to the default setting.
+****
+
+== Block
+
+=== Example Blocks
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/blocks/example-blocks/[Example Blocks]
+
+[source,asciidoc]
+----
+[example]
+This is an example of an example block.
+
+.Onomatopoeia
+====
+The book hit the floor with a *thud*.
+
+He could hear doves *cooing* in the pine trees`' branches.
+====
+----
+
+****
+.Optional title
+[example]
+This is an example of an example block.
+
+.Onomatopoeia
+====
+The book hit the floor with a *thud*.
+
+He could hear doves *cooing* in the pine trees`' branches.
+====
+****
+
+=== Blockquotes
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/blocks/blockquotes/[Blockquotes]
+
+[source,asciidoc]
+----
+.After landing the cloaked Klingon bird of prey in Golden Gate park:
+[quote, Captain James T. Kirk, Star Trek IV: The Voyage Home]
+Everybody remember where we parked.
+
+[quote, Monty Python and the Holy Grail]
+____
+Dennis: Come and see the violence inherent in the system. Help! Help! I'm being repressed!
+
+King Arthur: Bloody peasant!
+
+Dennis: Oh, what a giveaway! Did you hear that? Did you hear that, eh? That's what I'm on about! Did you see him repressing me? You saw him, Didn't you?
+____
+----
+
+****
+.After landing the cloaked Klingon bird of prey in Golden Gate park:
+[quote, Captain James T. Kirk, Star Trek IV: The Voyage Home]
+Everybody remember where we parked.
+
+[quote, Monty Python and the Holy Grail]
+____
+Dennis: Come and see the violence inherent in the system. Help! Help! I'm being repressed!
+
+King Arthur: Bloody peasant!
+
+Dennis: Oh, what a giveaway! Did you hear that? Did you hear that, eh? That's what I'm on about! Did you see him repressing me? You saw him, Didn't you?
+____
+****
+
+=== Source Code
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/blocks/blockquotes/[Blockquotes]
+
+.ドキュメント属性で highlighters を選択
+[source,asciidoc]
+----
+:source-highlighter: coderay
+----
+
+[source,asciidoc]
+----
+[source,ruby]
+-----
+require 'sinatra'
+
+get '/hi' do
+  "Hello World!"
+end
+-----
+----
+
+****
+[source,ruby]
+----
+require 'sinatra'
+
+get '/hi' do
+  "Hello World!"
+end
+----
+****
+
+=== Open
+
+[source,asciidoc]
+----
+--
+An open block can be an anonymous container,
+or it can masquerade as any other block.
+--
+----
+
+****
+--
+An open block can be an anonymous container,
+or it can masquerade as any other block.
+--
+****
+
+=== Collapsible
+
+[source,asciidoc]
+----
+.Click to reveal the answer
+[%collapsible]
+====
+This is the answer.
+====
+----
+
+****
+.Click to reveal the answer
+[%collapsible]
+====
+This is the answer.
+====
+****
+
+== Tables
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/tables/build-a-basic-table/[Table]
+
+[source,asciidoc]
+----
+.表の見出し
+|===
+|カラム名1 |カラム名2 |カラム名3 
+
+|セル11
+|セル12
+|セル13
+
+|セル21
+|セル22
+|セル23
+|===
+
+.セルの結合
+[cols="1a,1a,1a",options="autowidth"]
+|===
+|1A|1B|1C
+
+2+|「数値+」で横結合|2C
+
+.2+|「.数値+」で縦結合|3B|3C
+
+|4B
+|* 4C
+* セル内でも
+* *asciidoc 書ける*
+|===
+
+.CSV
+[%header,format=csv]
+|===
+Artist,Track,Genre
+Baauer,Harlem Shake,Hip Hop
+The Lumineers,Ho Hey,Folk Rock
+|===
+
+.表の属性
+[cols=>1h;2d,width=50%,frame=topbot]
+|===
+| Attribute Name | Values
+
+| options
+| header,footer,autowidth
+
+| cols
+| colspec[;colspec;...]
+
+| grid
+| all \| cols \| rows \| none
+
+| frame
+| all \| sides \| topbot \| none
+
+| stripes
+| all \| even \| odd \| none
+
+| width
+| (0%..100%)
+
+| format
+| psv {vbar} csv {vbar} dsv
+|===
+
+----
+
+****
+.表の見出し
+|===
+|カラム名1 |カラム名2 |カラム名3 
+
+|セル11
+|セル12
+|セル13
+
+|セル21
+|セル22
+|セル23
+|===
+
+.セルの結合
+[cols="1a,1a,1a",options="autowidth"]
+|===
+|1A|1B|1C
+
+2+|「数値+」で横結合|2C
+
+.2+|「.数値+」で縦結合|3B|3C
+
+|4B
+|* 4C
+* セル内でも
+* *asciidoc書ける*
+|===
+
+.CSV
+[%header,format=csv]
+|===
+Artist,Track,Genre
+Baauer,Harlem Shake,Hip Hop
+The Lumineers,Ho Hey,Folk Rock
+|===
+
+.表の属性
+[cols=>1h;2d,width=50%,frame=topbot]
+|===
+| Attribute Name | Values
+
+| options
+| header,footer,autowidth
+
+| cols
+| colspec[;colspec;...]
+
+| grid
+| all \| cols \| rows \| none
+
+| frame
+| all \| sides \| topbot \| none
+
+| stripes
+| all \| even \| odd \| none
+
+| width
+| (0%..100%)
+
+| format
+| psv {vbar} csv {vbar} dsv
+|===
+****
+
+== Comments
+
+[source,asciidoc]
+----
+// A single-line comment.
+
+////
+A block comment.
+
+Notice it's a delimited block.
+////
+----
+
+== TOC
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/toc/[Automatic Table of Contents]
+
+[source,asciidoc]
+----
+:toc: left
+:toclevels: 3
+:toc-title: 目次
+----
+
+== Captions
+
+表や図のキャプションを入れることができる。番号も自動で割り振ってくれる。
+
+[source,asciidoc]
+----
+:example-caption: 例
+:table-caption: 表
+:figure-caption: 図
+----
+
+[source,asciidoc]
+----
+#図や表のブロックの前に ".キャプション" を付ける
+
+.GitHub mascot
+image::https://asciidoctor.org/images/octocat.jpg[GitHub mascot]
+----
+
+.キャプションと自動採番
+****
+.GitHub mascot
+image::https://asciidoctor.org/images/octocat.jpg[GitHub mascot]
+
+.タイトル、ヘッダ付き2×3
+|===
+|カラム名1 |カラム名2 |カラム名3 
+
+|セル11
+|セル12
+|セル13
+
+|セル21
+|セル22
+|セル23
+|===
+
+.ヘッダ付き2×2
+[cols="2*", options="header"] 
+|===
+|カラム名1
+|カラム名2
+
+|セル11
+|セル12
+
+|セル21
+|セル22
+|===
+
+.サンプルドキュメント
+=====
+これはサンプルです。
+
+* 項目1
+* 項目2
+* 項目3
+=====
+
+.サンプルソース
+=====
+[source,asciidoc]
+----
+= Hello, AsciiDoc!
+Doc Writer <doc@example.com>
+
+An introduction to http://asciidoc.org[AsciiDoc].
+
+== First Section
+
+* item 1
+* item 2
+
+[source,ruby]
+puts "Hello, World!"
+----
+=====
+****
+
+== Includes
+
+TIP: link:https://docs.asciidoctor.org/asciidoc/latest/directives/include/[Include]
+
+[source,asciidoc]
+----
+\include::docs/subdoc.adoc[]
+----
+
+****
+include::docs/subdoc.adoc[]
+****
+
+== Diagram
+
+TIP: link:https://docs.asciidoctor.org/diagram-extension/latest/[diagram - asciidoctor]
+
+WARNING: Asciidoctor-PDF だと期待した結果にならない場合も。
+
+include::docs/plantuml/design.adoc[]
+
+[appendix]
+== How to setup
+
+* link:https://asciidoctor.org/#requirements[requirements]
+* link:https://asciidoctor.org/#installation[installation]

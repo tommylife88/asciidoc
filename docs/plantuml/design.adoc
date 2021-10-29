@@ -1,0 +1,107 @@
+:imagesdir: ../images/diagram
+
+.PlantUML
+[source,asciidoc]
+----
+Activity::
+[plantuml,activity,svg]
+-----
+@startuml
+start
+:Hello world;
+:This is defined on
+several **lines**;
+end
+@enduml
+-----
+
+Class::
+[plantuml,class,svg]
+-----
+@startuml
+class Foo {
++ field1
++ field2
+}
+
+class Bar {
++ field3
++ field4
+}
+
+Foo::field1 --> Bar::field3 : foo
+Foo::field2 --> Bar::field4 : bar
+@enduml
+-----
+
+Sequence::
+[plantuml,sequence,svg]
+-----
+\include::sequence.pu[]
+-----
+
+State::
+[plantuml,state,svg]
+-----
+\include::state.pu[]
+-----
+
+Use Case::
+[plantuml,usecase,svg]
+-----
+\include::usecase.pu[]
+-----
+
+----
+
+.PlantUML
+****
+Activity::
+[plantuml,activity,svg]
+----
+@startuml
+start
+:Hello world;
+:This is defined on
+several **lines**;
+end
+@enduml
+----
+
+Class::
+[plantuml,class,svg]
+----
+@startuml
+class Foo {
++ field1
++ field2
+}
+
+class Bar {
++ field3
++ field4
+}
+
+Foo::field1 --> Bar::field3 : foo
+Foo::field2 --> Bar::field4 : bar
+@enduml
+----
+
+Sequence::
+[plantuml,sequence,svg]
+----
+include::sequence.pu[]
+----
+
+State::
+[plantuml,state,svg]
+----
+include::state.pu[]
+----
+
+Use Case::
+[plantuml,usecase,svg]
+----
+include::usecase.pu[]
+----
+****
