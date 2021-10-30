@@ -1,4 +1,4 @@
-:imagesdir: ../images/diagram
+:imagesdir: images/diagram
 
 .PlantUML
 [source,asciidoc]
