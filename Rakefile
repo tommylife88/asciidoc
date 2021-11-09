@@ -28,7 +28,11 @@ namespace :cheatsheet do
         task :build do
             mkdir_p(OUTDIR_CHEAT_HTML)
             cp_r("images", "#{OUTDIR_CHEAT_HTML}/")
-            `bundle exec asciidoctor -r asciidoctor-diagram -a revdate=#{date_str} #{CHEAT_SOURCE} -o #{CHEAT_OUTPUT_HTML}`
+            `bundle exec asciidoctor \
+            -r asciidoctor-diagram \
+            -a revdate=#{date_str} \
+            #{CHEAT_SOURCE} \
+            -o #{CHEAT_OUTPUT_HTML}`
             rm_r("#{OUTDIR_CHEAT_HTML}/.asciidoctor")
         end
 
@@ -48,7 +52,17 @@ namespace :cheatsheet do
         desc "Convret asciidoc-cheatsheet.adoc to PDF file"
         task :build do
             mkdir_p(OUTDIR_CHEAT_PDF)
-            `bundle exec asciidoctor-pdf -r asciidoctor-diagram -r asciidoctor-pdf-cjk -a skip-front-matter -a allow-uri-read -a source-highlighter=coderay -a pdf-stylesdir=styles -a pdf-style=default-with-fallback-font-theme.yml -a revdate=#{date_str} #{CHEAT_SOURCE} -o #{CHEAT_OUTPUT_PDF}`
+            `bundle exec asciidoctor-pdf \
+            -r asciidoctor-diagram \
+            -r asciidoctor-pdf-cjk \
+            -a skip-front-matter \
+            -a allow-uri-read \
+            -a source-highlighter=coderay \
+            -a pdf-stylesdir=styles \
+            -a pdf-style=default-with-fallback-font-theme.yml \
+            -a revdate=#{date_str} \
+            #{CHEAT_SOURCE} \
+            -o #{CHEAT_OUTPUT_PDF}`
             rm_r("#{OUTDIR_CHEAT_PDF}/.asciidoctor")
             rm_r("#{OUTDIR_CHEAT_PDF}/images")
         end
