@@ -1,0 +1,40 @@
+name: AsciiDoc cheat sheet github pages
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y --no-install-recommends \
+           graphviz \
+           default-jdk
+
+      - name: Install gems
+        run: |
+          gem update bundler
+          bundle install
+
+      - name: Build HTML
+        run: bundle exec rake cheatsheet:html:build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output/cheatsheet/html
