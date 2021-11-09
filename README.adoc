@@ -4,25 +4,4 @@
 
 ``AsciiDoc``cheat sheet.
 
-link:asciidoc-cheatsheet.adoc[CheatSheet]
-
-## Env
-
-### Ruby gems
-
-https://www.ruby-lang.org/
-
-[source,bash]
-----
-gem install bundler
-bundle config set --local path .bundle/.gems
-bundle config set --local github.https true
-bundle install
-----
-
-### Usage
-
-[source,bash]
-----
-bundle exec rake -T
-----
+link:https://tommylife88.github.io/asciidoc/[CheatSheet - GitHub Pages]
