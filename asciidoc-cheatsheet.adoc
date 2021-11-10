@@ -22,7 +22,7 @@
 
 [.lead]
 ====
-link:https://asciidoctor.org/[AsciiDoc] Cheat sheet
+link:https://docs.asciidoctor.org/asciidoc/latest/[AsciiDoc]チートシート
 ====
 
 == Document Attributes
@@ -52,13 +52,13 @@ TIP: link:https://docs.asciidoctor.org/asciidoc/latest/attributes/document-attri
 .asciidoc
 [source,asciidoc]
 ----
-このドキュメントは {url-repo}[MITライセンスで公開します].
+このドキュメントのもととなるコードはMITライセンスで {url-repo}[公開します].
 
 WARNING: {disclaimer}
 ----
 
 ****
-このドキュメントは {url-repo}[MITライセンスで公開します].
+このドキュメントのもととなるコードはMITライセンスで {url-repo}[公開します].
 
 WARNING: {disclaimer}
 ****
@@ -1190,5 +1190,4 @@ include::docs/plantuml/design.adoc[]
 [appendix]
 == How to setup
 
-* link:https://asciidoctor.org/#requirements[requirements]
-* link:https://asciidoctor.org/#installation[installation]
+See link:https://asciidoctor.org/[asciidoctor]
